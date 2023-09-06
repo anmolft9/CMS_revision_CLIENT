@@ -1,11 +1,16 @@
 import "./App.css";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LoginPage } from "./pages/login/LoginPage";
+
 function App() {
   return (
     <div className="App">
-      <h1>
-        <i class="fa-solid fa-up-long"></i>Tadaaaa
-      </h1>
+      <BrowserRouter>
+        <Routes>
+          <Route to="/" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
