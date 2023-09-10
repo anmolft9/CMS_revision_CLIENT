@@ -7,7 +7,7 @@ export const AdminRegistration = () => {
   return (
     <div>
       <Header />
-      <Container />
+      <Container className="page-main">asdasd</Container>
       <Footer />
     </div>
   );
