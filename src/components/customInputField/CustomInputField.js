@@ -1,0 +1,13 @@
+import React from "react";
+import { Form } from "react-bootstrap";
+
+export const CustomInputField = ({ label, ...rest }) => {
+  return (
+    <div>
+      <Form.Group className="mb-3">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+    </div>
+  );
+};
