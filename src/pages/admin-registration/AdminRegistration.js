@@ -5,6 +5,23 @@ import { Button, Container, Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
 
 export const AdminRegistration = () => {
+  const fields = [
+    {
+      label: "First name",
+      name: "Fname",
+      type: "text",
+      placeholder: "Anmol",
+      required: true,
+    },
+    {
+      label: "Last name",
+      name: "Lname",
+      type: "text",
+      placeholder: "Bhattarai",
+      required: true,
+    },
+  ];
+
   return (
     <div>
       <Header />
@@ -18,14 +35,7 @@ export const AdminRegistration = () => {
               type="email"
               placeholder="Enter your email address"
             />
-            <CustomInputField
-              label="Password"
-              type="password"
-              placeholder="Enter your password"
-            />
-            <CustomInputField />
-            <CustomInputField />
-            <CustomInputField />
+
             <Button variant="primary" type="submit">
               Submit
             </Button>
