@@ -5,8 +5,8 @@ export const CustomInputField = ({ label, ...rest }) => {
   return (
     <div>
       <Form.Group className="mb-3">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Label>{label}</Form.Label>
+        <Form.Control {...rest} />
       </Form.Group>
     </div>
   );
