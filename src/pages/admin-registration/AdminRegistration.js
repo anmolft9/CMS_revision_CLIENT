@@ -1,23 +1,28 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
-import { Button, Container, Form } from "react-bootstrap";
+import { Alert, Button, Container, Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField.js";
 
 export const AdminRegistration = () => {
- const [form, setForm] = useState({})
+  const [form, setForm] = useState({});
+  const [response, setResponse] = useState({
+    message: "test",
+    status: "error",
+  });
 
- const handleOnChange=(e)=>{
-const {name, value} = e.target
-setForm({
-  ...form, [name]:value
-})
- }
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
- const handleOnSubmit =(e)=>{
-  e.preventDefault();
-  console.log(form)
- }
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
 
   const fields = [
     {
@@ -80,8 +85,15 @@ setForm({
       <Header />
       <Container className="page-main">
         <div className="form">
-          <Form onSubmit = {handleOnSubmit}>
+          <Form onSubmit={handleOnSubmit}>
             <h1>Admin Registration Form</h1>
+            {response.message && (
+              <Alert
+                variant={response.status === "success" ? "success" : "danger"}
+              >
+                {response.message}
+              </Alert>
+            )}
             <hr />
 
             {fields.map((item, i) => (
