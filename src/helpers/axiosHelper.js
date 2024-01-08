@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const rootUrl = process.env.API_ENDPOINT;
+const adminUserEP = rootUrl + "/admin-user";
+
 const apiProcessor = ({ method, url, data }) => {
   try {
     const response = axios({
@@ -7,10 +10,22 @@ const apiProcessor = ({ method, url, data }) => {
       url,
       data,
     });
+
+    return response.data;
   } catch (error) {
     return {
       status: "error",
       message: error.message,
     };
   }
+};
+
+///post new admin user
+export const postUser = (data) => {
+  const options = {
+    method: "post",
+    url: adminUserEP,
+    data,
+  };
+  return apiProcessor(options);
 };

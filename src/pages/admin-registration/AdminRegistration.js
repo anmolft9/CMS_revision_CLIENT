@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
 import { Alert, Button, Container, Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField.js";
+import { postUser } from "../../helpers/axiosHelper.js";
 
 export const AdminRegistration = () => {
   const [form, setForm] = useState({});
@@ -19,9 +20,12 @@ export const AdminRegistration = () => {
     });
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
+
+    const result = await postUser(form);
+    setResponse(result);
   };
 
   const fields = [
