@@ -25,20 +25,21 @@ export const AdminRegistration = () => {
     console.log(form);
 
     const result = await postUser(form);
+
     setResponse(result);
   };
 
   const fields = [
     {
       label: "First name",
-      name: "Fname",
+      name: "fName",
       type: "text",
       placeholder: "Anmol",
       required: true,
     },
     {
       label: "Last name",
-      name: "Lname",
+      name: "lName",
       type: "text",
       placeholder: "Bhattarai",
       required: true,
