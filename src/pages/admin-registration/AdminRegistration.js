@@ -23,8 +23,11 @@ export const AdminRegistration = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-
-    const result = await postUser(form);
+    const { confirmPassword, ...rest } = form;
+    if (confirmPassword !== rest.password) {
+      return alert("password donot mnatch");
+    }
+    const result = await postUser(rest);
 
     setResponse(result);
   };
