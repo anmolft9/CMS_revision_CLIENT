@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
-import { Container } from "react-bootstrap";
+import { Card, Container, Spinner } from "react-bootstrap";
 
 ///show the spinner
 ///grab the c and e from the query string parameters
@@ -11,11 +11,21 @@ import { Container } from "react-bootstrap";
 //check if the combination of the email and the code exist on the user table, if yes then activate the user and send the verification email
 
 const EmailVerification = () => {
+  const [isPending, setIsPending] = useState(true);
   return (
     <div>
       <Header />
       <Container className="page-main">
-        <h2>EmailVerification</h2>
+        {isPending && (
+          <Card className="mt-5 p-2 m-auto" style={{ width: "20rem" }}>
+            <Spinner
+              className="mt-3 p-2 m-auto "
+              variant="success"
+              animation="border"
+            ></Spinner>
+            <h5>Email verification is pending, please wait...</h5>
+          </Card>
+        )}
       </Container>
       <Footer />
     </div>
