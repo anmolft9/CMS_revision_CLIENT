@@ -8,7 +8,7 @@ import { Card, Container, Spinner } from "react-bootstrap";
 //create and axios function to call the server
 
 //create api end point to receive the code
-//check if the combination of the email and the code exist on the user table, if yes then activate the user and send the verification email
+//check if the combination of the email and the code exist on the user table, if yes then activate the user and send the verified confirmation message or to the home page
 
 const EmailVerification = () => {
   const [isPending, setIsPending] = useState(true);
