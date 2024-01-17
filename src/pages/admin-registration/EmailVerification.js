@@ -5,7 +5,7 @@ import { Card, Container, Spinner } from "react-bootstrap";
 
 ///show the spinner
 ///grab the c and e from the query string parameters
-//create and axios function to call the server
+//create  axios function to call the server and vice versa
 
 //create api end point to receive the code
 //check if the combination of the email and the code exist on the user table, if yes then activate the user and send the verified confirmation message or to the home page
