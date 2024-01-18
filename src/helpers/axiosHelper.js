@@ -30,3 +30,13 @@ export const postUser = (data) => {
   };
   return apiProcessor(options);
 };
+
+///verify new admin user email account
+export const emailVerifyAdminUser = (data) => {
+  const options = {
+    method: "patch",
+    url: adminUserEP + "/verify-email",
+    data,
+  };
+  return apiProcessor(options);
+};

@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
 import { Card, Container, Spinner } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
+import { emailVerifyAdminUser } from "../../helpers/axiosHelper.js";
 
 ///show the spinner
 ///grab the c and e from the query string parameters
@@ -19,9 +20,12 @@ const EmailVerification = () => {
     const obj = {
       emailValidationCode: queryParams.get("c"),
       email: queryParams.get("e"),
-
-      ///call axios to call the server
     };
+    ///call axios to call the server
+
+    (async () => {
+      const result = emailVerifyAdminUser(obj);
+    })(); ///making the function and invoking, to use async await inside the useffect
   }, []);
 
   return (
