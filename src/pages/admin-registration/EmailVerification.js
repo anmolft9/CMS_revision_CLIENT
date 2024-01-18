@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
 import { Card, Container, Spinner } from "react-bootstrap";
@@ -14,6 +14,16 @@ import { useSearchParams } from "react-router-dom";
 const EmailVerification = () => {
   const [queryParams] = useSearchParams();
   const [isPending, setIsPending] = useState(true);
+
+  useEffect(() => {
+    const obj = {
+      emailValidationCode: queryParams.get("c"),
+      email: queryParams.get("e"),
+
+      ///call axios to call the server
+    };
+  }, []);
+
   return (
     <div>
       <Header />
