@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
 import { Card, Container, Spinner } from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
 
 ///show the spinner
 ///grab the c and e from the query string parameters
@@ -11,6 +12,7 @@ import { Card, Container, Spinner } from "react-bootstrap";
 //check if the combination of the email and the code exist on the user table, if yes then activate the user and send the verified confirmation message or to the home page
 
 const EmailVerification = () => {
+  const [queryParams] = useSearchParams();
   const [isPending, setIsPending] = useState(true);
   return (
     <div>
