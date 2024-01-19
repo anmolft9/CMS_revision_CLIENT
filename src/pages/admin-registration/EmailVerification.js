@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/footer/Footer";
-import { Card, Container, Spinner } from "react-bootstrap";
+import { Alert, Card, Container, Spinner } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { emailVerifyAdminUser } from "../../helpers/axiosHelper.js";
 
@@ -25,8 +25,9 @@ const EmailVerification = () => {
     ///call axios to call the server
 
     (async () => {
-      const result = emailVerifyAdminUser(obj);
+      const result = await emailVerifyAdminUser(obj);
       setResponse(result);
+      setIsPending(false);
     })(); ///making the function and invoking, to use async await inside the useffect
   }, []);
 
@@ -36,6 +37,7 @@ const EmailVerification = () => {
     <div>
       <Header />
       <Container className="page-main">
+        {/* if the pending is true */}
         {isPending && (
           <Card className="mt-5 p-2 m-auto" style={{ width: "20rem" }}>
             <Spinner
@@ -45,6 +47,15 @@ const EmailVerification = () => {
             ></Spinner>
             <h5>Email verification is pending, please wait...</h5>
           </Card>
+        )}
+
+        {response.message && (
+          <Alert
+            variant={response.status === "success" ? "success" : "danger"}
+            className="mt-5 p-2 m-auto"
+          >
+            {response.message}
+          </Alert>
         )}
       </Container>
       <Footer />
