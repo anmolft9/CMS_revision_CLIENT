@@ -15,6 +15,7 @@ import { emailVerifyAdminUser } from "../../helpers/axiosHelper.js";
 const EmailVerification = () => {
   const [queryParams] = useSearchParams();
   const [isPending, setIsPending] = useState(true);
+  const [response, setResponse] = useState({});
 
   useEffect(() => {
     const obj = {
@@ -25,8 +26,11 @@ const EmailVerification = () => {
 
     (async () => {
       const result = emailVerifyAdminUser(obj);
+      setResponse(result);
     })(); ///making the function and invoking, to use async await inside the useffect
   }, []);
+
+  console.log(response);
 
   return (
     <div>
