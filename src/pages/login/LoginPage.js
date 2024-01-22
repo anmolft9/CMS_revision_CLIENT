@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Header } from "../../components/Header/Header";
 import { Button, Container } from "react-bootstrap";
 import { Footer } from "../../components/footer/Footer";
@@ -6,6 +6,8 @@ import { Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
 
 export const LoginPage = () => {
+  const emailRef = useRef("");
+  const passRef = useRef("");
   return (
     <div>
       <Header />
