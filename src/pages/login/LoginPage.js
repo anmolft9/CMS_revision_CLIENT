@@ -11,9 +11,22 @@ export const LoginPage = () => {
       <Header />
       <Container className="page-main">
         <div className="form">
+          <h3>Welcome, Please Login!</h3>
           <Form>
-            <CustomInputField />
-            <CustomInputField />
+            <CustomInputField
+              label="email"
+              name="email"
+              type="email"
+              placeholder="Your Email Address"
+              required="true"
+            />
+            <CustomInputField
+              label="password"
+              name="password"
+              type="password"
+              placeholder="Password Please"
+              required="true"
+            />
             <Button variant="primary" type="submit">
               Login
             </Button>
