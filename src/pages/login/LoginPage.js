@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Button, Container } from "react-bootstrap";
 import { Footer } from "../../components/footer/Footer";
@@ -6,16 +6,31 @@ import { Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
 
 export const LoginPage = () => {
-  const emailRef = useRef("");
-  const passRef = useRef("");
+  // const emailRef = useRef("");
+  // const passRef = useRef("");
+
+  const [form, setForm] = useState({});
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    // console.log(name, value);
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
+
   return (
     <div>
       <Header />
       <Container className="page-main">
         <div className="form">
           <h3>Welcome, Please Login!</h3>
-          <Form>
+          <Form onSubmit={handleOnSubmit}>
             <CustomInputField
+              onChange={handleOnChange}
               label="email"
               name="email"
               type="email"
@@ -23,6 +38,7 @@ export const LoginPage = () => {
               required="true"
             />
             <CustomInputField
+              onChange={handleOnChange}
               label="password"
               name="password"
               type="password"
