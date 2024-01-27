@@ -14,7 +14,7 @@ const userSlice = createSlice({
   },
 });
 
-const { reducers, actions } = userSlice;
+const { reducer, actions } = userSlice;
 export const { setAdminUser } = actions;
 
-export default reducers;
+export default reducer;
