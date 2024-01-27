@@ -21,7 +21,6 @@ export const LoginPage = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
     dispatch(loginUserAction(form));
   };
 

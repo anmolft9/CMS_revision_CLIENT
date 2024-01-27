@@ -11,7 +11,6 @@ const apiProcessor = async ({ method, url, data }) => {
       url,
       data,
     });
-    console.log(response);
     return response.data;
   } catch (error) {
     return {
