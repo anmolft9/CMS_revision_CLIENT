@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Button, Container } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Footer } from "../../components/footer/Footer";
 import { Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
+import { loginUserAction } from "./userAction";
 
 export const LoginPage = () => {
   // const emailRef = useRef("");
   // const passRef = useRef("");
-
+  const dispatch = useDispatch();
   const [form, setForm] = useState({});
 
   const handleOnChange = (e) => {
@@ -20,6 +22,7 @@ export const LoginPage = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(form);
+    dispatch(loginUserAction(form));
   };
 
   return (
