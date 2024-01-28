@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./pages/login/userSlice.js";
 
-console.log(userReducer);
+// console.log(userReducer);
 
 const store = configureStore({
   reducer: {
