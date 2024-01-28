@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Button, Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Footer } from "../../components/footer/Footer";
 import { Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
 import { loginUserAction } from "./userAction";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
-  // const emailRef = useRef("");
-  // const passRef = useRef("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [form, setForm] = useState({});
+
+  const { user } = useSelector((state) => state.admin);
+
+  useEffect(() => {
+    user._id && navigate("/dashboard");
+  }, [user, navigate]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
