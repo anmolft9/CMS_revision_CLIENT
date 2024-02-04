@@ -22,11 +22,11 @@ export const LoginPage = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-    // console.log(name, value);
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+
     dispatch(loginUserAction(form));
   };
 

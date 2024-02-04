@@ -24,6 +24,7 @@ export const AdminRegistration = () => {
     e.preventDefault();
     console.log(form);
     const { confirmPassword, ...rest } = form;
+    console.log(rest);
     if (confirmPassword !== rest.password) {
       return alert("password donot mnatch");
     }

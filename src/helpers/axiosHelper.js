@@ -11,6 +11,8 @@ const apiProcessor = async ({ method, url, data }) => {
       url,
       data,
     });
+    console.log(data);
+
     return response.data;
   } catch (error) {
     return {
@@ -27,6 +29,7 @@ export const postUser = (data) => {
     url: adminUserEP,
     data,
   };
+  console.log(data);
   return apiProcessor(options);
 };
 
@@ -47,5 +50,6 @@ export const loginAdminUser = (data) => {
     url: adminUserEP + "/login",
     data,
   };
+  console.log(data);
   return apiProcessor(options);
 };
