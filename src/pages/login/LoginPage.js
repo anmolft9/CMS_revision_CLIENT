@@ -27,7 +27,7 @@ export const LoginPage = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(loginUserAction(form));
+    dispatch(loginUserAction(form)); //dispatching the value of form to the global state handled by redux
   };
 
   return (
