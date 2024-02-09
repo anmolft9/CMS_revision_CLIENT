@@ -17,7 +17,7 @@ export const LoginPage = () => {
 
   useEffect(() => {
     user._id && navigate("/dashboard");
-  }, [user, navigate]);
+  }, [user, navigate]); ///dependencies
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
