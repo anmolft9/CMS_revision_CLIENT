@@ -50,7 +50,7 @@ export const LoginPage = () => {
               label="password"
               name="password"
               type="password"
-              placeholder="Password Please"
+              placeholder="Password"
               required="true"
             />
             <Button variant="primary" type="submit">
