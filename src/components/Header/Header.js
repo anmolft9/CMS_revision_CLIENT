@@ -7,7 +7,11 @@ export const Header = () => {
   return (
     <Navbar collapseOnSelect expand="md" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">AdminCMS</Navbar.Brand>
+        <div>
+          <i class="fa-solid fa-bars"></i>{" "}
+          <Navbar.Brand href="/">AdminCMS</Navbar.Brand>
+        </div>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
