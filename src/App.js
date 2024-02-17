@@ -7,6 +7,7 @@ import EmailVerification from "./pages/admin-registration/EmailVerification.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Dashboard } from "./pages/dashboard/Dashboard.js";
+import { Product } from "./pages/products/Product.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           {/* private routes */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/product" element={<Product />} />
 
           {/* public routes */}
           <Route path="/" element={<LoginPage />} />
