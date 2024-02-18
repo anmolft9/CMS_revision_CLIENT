@@ -11,7 +11,7 @@ export const AdminLayout = ({ children }) => {
       {/* side bar */}
       <SideMenu />
       {/* main section */}
-      <main style={{ minHeight: "72vh" }}>{children}</main>
+      <main style={{ minHeight: "73vh" }}>{children}</main>
       {/* footer */}
       <Footer />
     </div>
