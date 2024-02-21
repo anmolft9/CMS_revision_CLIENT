@@ -9,14 +9,9 @@ export const SideMenu = () => {
   //   const [show, setShow] = useState(false);
 
   const handleClose = () => dispatch(setshowSideMenu(false));
-  const handleShow = () => dispatch(setshowSideMenu(true));
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
-
       <Offcanvas show={showSideMenu} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
