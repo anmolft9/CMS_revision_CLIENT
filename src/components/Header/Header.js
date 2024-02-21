@@ -14,8 +14,8 @@ export const Header = () => {
       <Container>
         <div>
           <button style={{ border: 0 }}>
-            <i class="fa-solid fa-bars" onClick={handleShow}></i>{" "}
-          </button>
+            <i class="fa-solid fa-bars" onClick={handleShow}></i>
+          </button>{" "}
           <Navbar.Brand href="/">AdminCMS</Navbar.Brand>
         </div>
 
