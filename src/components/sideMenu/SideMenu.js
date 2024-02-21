@@ -1,12 +1,15 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useDispatch, useSelector } from "react-redux";
+import { setshowSideMenu } from "../../pages/systemState/SystemSlice";
 
 export const SideMenu = () => {
-  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const { showSideMenu } = useSelector((state) => state.system);
+  //   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => dispatch(setshowSideMenu(false));
+  const handleShow = () => dispatch(setshowSideMenu(true));
 
   return (
     <>
@@ -14,7 +17,7 @@ export const SideMenu = () => {
         Launch
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={showSideMenu} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
