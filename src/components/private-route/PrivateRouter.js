@@ -4,5 +4,5 @@ import { Navigate } from "react-router-dom";
 
 export const PrivateRouter = ({ children }) => {
   const { user } = useSelector((state) => state.admin);
-  return user._id ? children : <Navigate to="/" />;
+  return user._id ? children : <Navigate to="/" replace />;
 };
