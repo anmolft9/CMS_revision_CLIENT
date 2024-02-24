@@ -6,17 +6,23 @@ import { Footer } from "../../components/footer/Footer";
 import { Form } from "react-bootstrap";
 import { CustomInputField } from "../../components/customInputField/CustomInputField";
 import { loginUserAction } from "./userAction";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [form, setForm] = useState({});
 
   const { user } = useSelector((state) => state.admin);
 
+  const origin =
+    (location.state && location.state.from && location.state.from.pathname) ||
+    "/dashboard";
+
   useEffect(() => {
-    user._id && navigate("/dashboard");
+    user._id && navigate(origin);
   }, [user, navigate]); ///dependencies
 
   const handleOnChange = (e) => {
