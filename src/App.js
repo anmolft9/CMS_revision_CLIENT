@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Dashboard } from "./pages/dashboard/Dashboard.js";
 import { Product } from "./pages/products/Product.js";
 import { PrivateRouter } from "./components/private-route/PrivateRouter.js";
+import { Category } from "./pages/categories/Category.js";
 
 function App() {
   return (
@@ -29,6 +30,15 @@ function App() {
             element={
               <PrivateRouter>
                 <Product />
+              </PrivateRouter>
+            }
+          />
+          {/* categories */}
+          <Route
+            path="/category"
+            element={
+              <PrivateRouter>
+                <Category />
               </PrivateRouter>
             }
           />

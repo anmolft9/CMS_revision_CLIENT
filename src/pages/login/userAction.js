@@ -20,6 +20,8 @@ export const loginUserAction = (data) => async (dispatch) => {
   }
 };
 
+//logout action , passing the empty object to set the state as empty when logged out
+
 export const adminLogout = () => (dispatch) => {
   dispatch(setAdminUser({}));
 };
