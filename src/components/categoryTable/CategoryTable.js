@@ -6,7 +6,9 @@ export const CategoryTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // console.log("here");
     dispatch(getCategoriesAction());
   }, []);
+
   return <div>CategoryTable</div>;
 };
