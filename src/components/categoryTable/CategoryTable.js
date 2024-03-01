@@ -31,7 +31,7 @@ export const CategoryTable = () => {
               <tr>
                 <td>{item.status}</td>
                 <td>{item.name}</td>
-                <td>{item.parentId ? "childrean" : "parent"}</td>
+                <td>{item.parentId ? "children" : "parent"}</td>
                 <td>
                   <Button variant="danger">Delete</Button>
                 </td>
