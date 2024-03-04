@@ -1,6 +1,7 @@
 import React from "react";
 import { AdminLayout } from "../../components/layout/AdminLayout";
 import { CategoryTable } from "../../components/categoryTable/CategoryTable";
+import { CatForm } from "../../components/catForm/CatForm";
 
 export const Category = () => {
   return (
@@ -9,6 +10,7 @@ export const Category = () => {
         Category Management
       </h2>
       {/* form */}
+      <CatForm />
       {/* table */}
 
       <CategoryTable />
