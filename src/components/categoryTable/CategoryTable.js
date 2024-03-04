@@ -33,7 +33,7 @@ export const CategoryTable = () => {
                 <td>{item.name}</td>
                 <td>{item.parentId ? "children" : "parent"}</td>
                 <td>
-                  <Button variant="danger">Delete</Button>
+                  <Button variant="danger">Delete</Button>{" "}
                   <Button variant="info">Edit</Button>
                 </td>
               </tr>
