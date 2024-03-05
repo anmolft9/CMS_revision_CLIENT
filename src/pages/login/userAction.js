@@ -8,10 +8,10 @@ export const loginUserAction = (data) => async (dispatch) => {
   toast.promise(resultPromise, { pending: "Please wait...." });
 
   const { status, message, user, accessJWT, refreshJWT } = await resultPromise;
-  console.log(resultPromise);
+  // console.log(resultPromise);
 
   toast[status](message);
-  console.log(status, message, user);
+  // console.log(status, message, user);
 
   if (status === "success") {
     sessionStorage.setItem("accessToken", accessJWT);

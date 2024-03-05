@@ -62,3 +62,13 @@ export const fetchCategories = (_id) => {
   };
   return apiProcessor(options);
 };
+
+//add category
+export const addCategories = (data) => {
+  const options = {
+    method: "post",
+    url: categoryEP,
+    data,
+  };
+  return apiProcessor(options);
+};

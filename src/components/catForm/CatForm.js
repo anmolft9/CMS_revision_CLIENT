@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { postCategoriesAction } from "../../pages/categories/CategoryAction";
 
 export const CatForm = () => {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({});
 
   const { categories } = useSelector((state) => state.category);
@@ -18,7 +20,8 @@ export const CatForm = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    // console.log(form);
+    dispatch(postCategoriesAction(form));
   };
   return (
     // Category adding form
