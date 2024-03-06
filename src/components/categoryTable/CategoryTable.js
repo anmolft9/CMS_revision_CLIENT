@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Table, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategoriesAction } from "../../pages/categories/CategoryAction";
+import { getCategoriesAction } from "../../pages/categories/CategoryAction.js";
 
 export const CategoryTable = () => {
   const dispatch = useDispatch();

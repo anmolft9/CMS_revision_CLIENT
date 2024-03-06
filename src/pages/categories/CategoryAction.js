@@ -12,6 +12,6 @@ export const getCategoriesAction = () => async (dispatch) => {
 //post categories
 export const postCategoriesAction = (data) => async (dispatch) => {
   const { status, categories } = await addCategories(data);
-  // console.log(status, categories);
-  status === "success" && dispatch(setCategories(categories));
+  console.log(status, categories);
+  status === "success" && dispatch(getCategoriesAction());
 };
