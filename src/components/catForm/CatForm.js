@@ -5,7 +5,13 @@ import { postCategoriesAction } from "../../pages/categories/CategoryAction";
 
 export const CatForm = () => {
   const dispatch = useDispatch();
-  const [form, setForm] = useState({});
+
+  const initialState = {
+    status: "inactive",
+    parentId: null,
+    name: "",
+  };
+  const [form, setForm] = useState(initialState);
 
   const { categories } = useSelector((state) => state.category);
 
@@ -32,7 +38,7 @@ export const CatForm = () => {
       <h5 className="mb-3">
         {" "}
         Add new Category
-        <h r />
+        <hr />
       </h5>
       <Row className="g-2">
         <Col md="2">
@@ -66,6 +72,7 @@ export const CatForm = () => {
             type="text"
             placeholder="Enter category"
             onChange={handleOnChange}
+            required
           />
         </Col>
         <Col md="2">
