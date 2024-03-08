@@ -14,6 +14,10 @@ export const CategoryTable = () => {
     dispatch(getCategoriesAction());
   }, []);
 
+  const parentCat = categories.filter(({ parentId }) => !parentId);
+  const childrenCat = categories.filter(({ parentId }) => parentId);
+  // console.log(parentCat, childrenCat);
+
   return (
     <Row>
       <Table striped bordered hover>
@@ -26,17 +30,33 @@ export const CategoryTable = () => {
           </tr>
         </thead>
         <tbody>
-          {categories.length > 0 &&
-            categories.map((item, i) => (
-              <tr>
-                <td>{item.status}</td>
-                <td>{item.name}</td>
-                <td>{item.parentId ? "children" : "parent"}</td>
-                <td>
-                  <Button variant="danger">Delete</Button>{" "}
-                  <Button variant="info">Edit</Button>
-                </td>
-              </tr>
+          {parentCat.length > 0 &&
+            parentCat.map((item) => (
+              <>
+                <tr key={item._id} style={{ backgroundColor: "#9ED2C6" }}>
+                  <td>{item.status}</td>
+                  <td>{item.name}</td>
+                  <td>{item.parentId ? "children" : "parent"}</td>
+                  <td>
+                    <Button variant="danger">Delete</Button>{" "}
+                    <Button variant="info">Edit</Button>
+                  </td>
+                </tr>
+                {childrenCat.map(
+                  (cat) =>
+                    cat.parentId === item._id && (
+                      <tr key={cat._id}>
+                        <td>{cat.status}</td>
+                        <td>{cat.name}</td>
+                        <td>{cat.parentId ? "children" : "parent"}</td>
+                        <td>
+                          <Button variant="danger">Delete</Button>{" "}
+                          <Button variant="info">Edit</Button>
+                        </td>
+                      </tr>
+                    )
+                )}
+              </>
             ))}
         </tbody>
       </Table>
