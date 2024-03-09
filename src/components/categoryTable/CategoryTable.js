@@ -14,8 +14,8 @@ export const CategoryTable = () => {
     dispatch(getCategoriesAction());
   }, []);
 
-  const parentCat = categories.filter(({ parentId }) => !parentId);
-  const childrenCat = categories.filter(({ parentId }) => parentId);
+  const parentCat = categories.filter(({ parentId }) => !parentId); //filter all the category with parent id
+  const childrenCat = categories.filter(({ parentId }) => parentId); ////filter all the category with children id
   // console.log(parentCat, childrenCat);
 
   return (
