@@ -33,6 +33,7 @@ export const CategoryTable = () => {
           {parentCat.length > 0 &&
             parentCat.map((item) => (
               <>
+                {/* style not working> will solve later */}
                 <tr key={item._id} style={{ backgroundColor: "#9ED2C6" }}>
                   <td>{item.status}</td>
                   <td>{item.name}</td>
