@@ -22,7 +22,7 @@ export const CategoryTable = () => {
     <Row>
       <Table striped bordered hover>
         <thead>
-          <tr classname="bg-warning">
+          <tr>
             <th>Status</th>
             <th>Name</th>
             <th>Level</th>
@@ -34,7 +34,7 @@ export const CategoryTable = () => {
             parentCat.map((item) => (
               <>
                 {/* style not working> will solve later */}
-                <tr key={item._id} className="bg-warning">
+                <tr key={item._id}>
                   <td>{item.status}</td>
                   <td>{item.name}</td>
                   <td>{item.parentId ? "children" : "parent"}</td>
