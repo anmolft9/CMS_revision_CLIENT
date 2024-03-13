@@ -1,3 +1,7 @@
+:root {
+  --bs-table-bg: initial; /* Revert to the default value or parent value */
+}
+
 .page-main {
   min-height: 70vh;
 }

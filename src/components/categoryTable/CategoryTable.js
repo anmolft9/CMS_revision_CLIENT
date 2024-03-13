@@ -34,7 +34,7 @@ export const CategoryTable = () => {
             parentCat.map((item) => (
               <>
                 {/* style not working> will solve later */}
-                <tr key={item._id}>
+                <tr key={item._id} class="table-primary">
                   <td>{item.status}</td>
                   <td>{item.name}</td>
                   <td>{item.parentId ? "children" : "parent"}</td>
