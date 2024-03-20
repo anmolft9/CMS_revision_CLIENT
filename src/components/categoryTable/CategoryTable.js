@@ -33,7 +33,6 @@ export const CategoryTable = () => {
           {parentCat.length > 0 &&
             parentCat.map((item) => (
               <>
-                {/* style not working> will solve later */}
                 <tr key={item._id} class="table-primary">
                   <td
                     class={
