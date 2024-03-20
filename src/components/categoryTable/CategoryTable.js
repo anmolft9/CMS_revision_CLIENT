@@ -35,7 +35,13 @@ export const CategoryTable = () => {
               <>
                 {/* style not working> will solve later */}
                 <tr key={item._id} class="table-primary">
-                  <td>{item.status}</td>
+                  <td
+                    class={
+                      item.status === "active" ? "text-success" : "text-danger"
+                    }
+                  >
+                    {item.status}
+                  </td>
                   <td>{item.name}</td>
                   <td>{item.parentId ? "children" : "parent"}</td>
                   <td>
@@ -47,7 +53,15 @@ export const CategoryTable = () => {
                   (cat) =>
                     cat.parentId === item._id && (
                       <tr key={cat._id}>
-                        <td>{cat.status}</td>
+                        <td
+                          class={
+                            cat.status === "active"
+                              ? "text-success"
+                              : "text-danger"
+                          }
+                        >
+                          {cat.status}
+                        </td>
                         <td>{cat.name}</td>
                         <td>{cat.parentId ? "children" : "parent"}</td>
                         <td>
