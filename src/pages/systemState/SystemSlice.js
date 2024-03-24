@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showSideMenu: false,
+  modalShow: true,
 };
 
 const systemSlice = createSlice({
@@ -10,6 +11,9 @@ const systemSlice = createSlice({
   reducers: {
     setshowSideMenu: (state, { payload }) => {
       state.showSideMenu = payload;
+    },
+    setModalShow: (state) => {
+      state.modalShow = !state.modalShow;
     },
   },
 });
