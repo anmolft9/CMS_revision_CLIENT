@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategoriesAction } from "../../pages/categories/CategoryAction.js";
 
 export const CategoryTable = () => {
   const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState({});
 
   const { categories } = useSelector((state) => state.category);
   // console.log(categories.length);
@@ -13,6 +14,10 @@ export const CategoryTable = () => {
     // console.log("here");
     dispatch(getCategoriesAction());
   }, []);
+
+  const handleOnEdit = (cat) => {
+    setSelectedCategory(cat);
+  };
 
   const parentCat = categories.filter(({ parentId }) => !parentId); //filter all the category with parent id
   const childrenCat = categories.filter(({ parentId }) => parentId); ////filter all the category with children id
@@ -45,7 +50,9 @@ export const CategoryTable = () => {
                   <td>{item.parentId ? "children" : "parent"}</td>
                   <td>
                     <Button variant="danger">Delete</Button>{" "}
-                    <Button variant="info">Edit</Button>
+                    <Button variant="info" onClick={() => handleOnEdit(item)}>
+                      Edit
+                    </Button>
                   </td>
                 </tr>
                 {childrenCat.map(
@@ -65,7 +72,12 @@ export const CategoryTable = () => {
                         <td>{cat.parentId ? "children" : "parent"}</td>
                         <td>
                           <Button variant="danger">Delete</Button>{" "}
-                          <Button variant="info">Edit</Button>
+                          <Button
+                            variant="info"
+                            onClick={() => handleOnEdit(cat)}
+                          >
+                            Edit
+                          </Button>
                         </td>
                       </tr>
                     )
