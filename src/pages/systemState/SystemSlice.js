@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showSideMenu: false,
-  modalShow: true,
+  modalShow: true, ///state for the modal to preview for editiing
 };
 
 const systemSlice = createSlice({
