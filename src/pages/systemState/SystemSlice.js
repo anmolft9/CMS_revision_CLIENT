@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showSideMenu: false,
-  modalShow: false, ///state for the modal to preview for editiing
+  modalShow: true, ///state for the modal to preview for editiing
 };
 
 const systemSlice = createSlice({
@@ -19,6 +19,6 @@ const systemSlice = createSlice({
 });
 
 const { reducer, actions } = systemSlice;
-export const { setshowSideMenu } = actions;
+export const { setshowSideMenu, setModalShow } = actions;
 
 export default reducer;

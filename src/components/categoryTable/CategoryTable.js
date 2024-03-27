@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Table, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategoriesAction } from "../../pages/categories/CategoryAction.js";
+import { EditCatForm } from "../catForm/EditCatForm.js";
+import { setModalShow } from "../../pages/systemState/SystemSlice.js";
 
 export const CategoryTable = () => {
   const dispatch = useDispatch();
@@ -17,7 +19,9 @@ export const CategoryTable = () => {
 
   const handleOnEdit = (cat) => {
     setSelectedCategory(cat);
+    dispatch(setModalShow());
   };
+  console.log(selectedCategory);
 
   const parentCat = categories.filter(({ parentId }) => !parentId); //filter all the category with parent id
   const childrenCat = categories.filter(({ parentId }) => parentId); ////filter all the category with children id
@@ -25,6 +29,7 @@ export const CategoryTable = () => {
 
   return (
     <Row>
+      <EditCatForm selectedCategory={selectedCategory} />
       <Table striped bordered hover>
         <thead>
           <tr>
