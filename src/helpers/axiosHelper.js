@@ -72,3 +72,13 @@ export const addCategories = (data) => {
   };
   return apiProcessor(options);
 };
+
+//update category
+export const updateCategories = (data) => {
+  const options = {
+    method: "put",
+    url: categoryEP,
+    data,
+  };
+  return apiProcessor(options);
+};

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { postCategoriesAction } from "../../pages/categories/CategoryAction";
+import { updateCategoriesAction } from "../../pages/categories/CategoryAction.js";
 import { CustomModal } from "../modal/Modal";
 
 export const EditCatForm = ({ selectedCategory }) => {
@@ -31,9 +31,9 @@ export const EditCatForm = ({ selectedCategory }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
-    // console.log(form);
-    // dispatch(postCategoriesAction(form));
+    const { _v, slug, ...rest } = form;
+    console.log(form);
+    dispatch(updateCategoriesAction(form));
   };
   return (
     // Category adding form
