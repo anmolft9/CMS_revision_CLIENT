@@ -31,8 +31,9 @@ export const EditCatForm = ({ selectedCategory }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+
     // console.log(form);
-    dispatch(postCategoriesAction(form));
+    // dispatch(postCategoriesAction(form));
   };
   return (
     // Category adding form
