@@ -32,7 +32,7 @@ export const EditCatForm = ({ selectedCategory }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(form);
-    const { __v, slug, ...rest } = form;
+    const { __v, slug, createdAt, updatedAt, ...rest } = form;
     dispatch(updateCategoriesAction(rest));
   };
   return (
