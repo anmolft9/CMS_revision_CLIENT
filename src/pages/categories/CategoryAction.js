@@ -1,5 +1,6 @@
 import {
   addCategories,
+  deleteCategories,
   fetchCategories,
   updateCategories,
 } from "../../helpers/axiosHelper";
@@ -28,6 +29,16 @@ export const updateCategoriesAction = (data) => async (dispatch) => {
   toast.promise(promisePending, { pending: "Please wait.. !! " });
   const { status, message } = await promisePending;
   // console.log(status, categories);
+  toast[status](message);
+  status === "success" && dispatch(getCategoriesAction());
+};
+
+//update categories
+export const deleteCategoriesAction = (_id) => async (dispatch) => {
+  const promisePending = deleteCategories(_id);
+  toast.promise(promisePending, { pending: "Please wait.. !! " });
+  const { status, message } = await promisePending;
+  console.log(status, message);
   toast[status](message);
   status === "success" && dispatch(getCategoriesAction());
 };

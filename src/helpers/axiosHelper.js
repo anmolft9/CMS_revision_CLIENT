@@ -82,3 +82,12 @@ export const updateCategories = (data) => {
   };
   return apiProcessor(options);
 };
+
+//delete category
+export const deleteCategories = (_id) => {
+  const options = {
+    method: "delete",
+    url: categoryEP + "/" + _id,
+  };
+  return apiProcessor(options);
+};
